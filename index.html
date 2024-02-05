@@ -1,44 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Tip calculator app</title>
+    <title>Frontend Mentor | Tip calculator app</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
+    <!-- Feel free to remove these styles or customize in your own stylesheet 👍 -->
+    <!-- <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+  </style> -->
+  </head>
+  <body>
+    <main class="container">
+      <img src="./images/logo.svg" class="logo" alt="logo" />
+      <div class="wrapper grid">
+        <div class="left grid">
+          <label class="bills">
+            Bill
+            <input type="text" autocomplete="none" placeholder="0.0" />
+          </label>
 
-  Bill5
+          <section class="tips">
+            <h1>Select Tip %</h1>
+            <div class="buttons grid">
+              <input type="submit" class="btn" value="5%" />
+              <input type="submit" class="btn" value="10%" />
+              <input type="submit" class="btn" value="15%" />
+              <input type="submit" class="btn" value="25%" />
+              <input type="submit" class="btn" value="50%" />
+              <input type="text" class="custom" placeholder="Custom" />
+            </div>
+          </section>
+          <label class="bills">
+            Number of People
+            <input type="text" autocomplete="none" placeholder="0" />
+          </label>
+        </div>
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
+        <div class="right grid">
+          <div class="tips__amount">
+            <h2>Tip Amount <span>/ person</span></h2>
+            <span class="results" >0.0</span>
+          </div>
+          <div class="tips__amount">
+            <h2>Total <span>/ person</span></h2>
+            <span class="results">0.0</span>
+          </div>
+          <button class="btn reset">Reset</button>
+        </div>
+      </div>
+    </main>
 
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
-  
+    <!--   
   <div class="attribution">
     Challenge by <a rel="noopener" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+  </div> -->
+  </body>
 </html>

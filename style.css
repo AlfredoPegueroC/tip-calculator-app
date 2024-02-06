@@ -2,6 +2,7 @@
 
 :root {
   --clr-primary-StrongCyan: hsl(172, 67%, 45%);
+  --clr-primary-LightRed: hsl(0, 100%, 67%);
 
   /* NEUTRAL */
 
@@ -36,6 +37,9 @@ body {
   font-family: "Space Mono", monospace;
   background: var(--clr-neutral-400);
   min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 h1,
 h2,
@@ -49,13 +53,15 @@ p {
   text-wrap: pretty;
 }
 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
-input[type=number] { -moz-appearance:textfield; }
+input[type="number"] {
+  -moz-appearance: textfield;
+}
 
 span {
   display: block;
@@ -71,9 +77,12 @@ span {
   margin-top: 2rem;
   width: 25%;
 }
+.title {
+  color: var(--clr-neutral-300);
+  margin-bottom: 1rem;
+}
 .container {
   display: flex;
-  justify-content: center;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
@@ -90,15 +99,50 @@ span {
   gap: 1rem;
 }
 label {
+  position: relative;
   display: flex;
   flex-direction: column;
+  color: var(--clr-neutral-300);
+  gap: 1rem;
 }
-input[type="number"] {
+input[type="number"],
+.custom {
+  display: block;
+  cursor: pointer;
   border: none;
   background: var(--clr-neutral-500);
   padding: 0.5rem;
   border-radius: 0.25rem;
   text-align: right;
+}
+input[type="number"]:focus,
+.custom:focus{
+  outline: 2px solid var(--clr-primary-StrongCyan);
+}
+input[type="number"]:invalid {
+  outline: 2px solid var(--clr-primary-LightRed);
+}
+input[type="number"]:invalid + label::after {
+  position: absolute;
+  top: 0;
+  content: "Can't be zero";
+  color: black;
+}
+
+label.error::before{
+  position: absolute;
+  content: "Can't be zero";
+  color: var(--clr-primary-LightRed);
+  right: 0;
+}
+
+
+
+.sign{
+  width: 5%;
+  position: absolute;
+  top: 55%;
+  left: 5%;
 }
 .btn {
   width: 150px;
@@ -114,13 +158,15 @@ input[type="number"] {
 }
 .custom {
   max-width: 150px;
+  text-align: center;
+  font-size: 1.5rem;
 }
 .btn:hover {
   cursor: pointer;
   background: var(--clr-primary-StrongCyan);
   color: var(--clr-neutral-100);
 }
-.btn.active{
+.btn.active {
   background: var(--clr-primary-StrongCyan);
   color: var(--clr-neutral-100);
 }
@@ -129,6 +175,10 @@ input[type="number"] {
   width: 100%;
   background: var(--clr-primary-StrongCyan);
   color: var(--clr-neutral-100);
+}
+
+.btn.reset:disabled {
+  background: var(--clr-neutral-300);
 }
 .right {
   border-radius: 1rem;
@@ -146,4 +196,58 @@ input[type="number"] {
 .results {
   font-size: 1.5rem;
   color: var(--clr-primary-StrongCyan);
+}
+footer{
+  margin-top: 5rem;
+  text-align: center;
+}
+@media (min-width: 62.5rem) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .wrapper {
+    max-width: 1000px;
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+    gap: 4rem;
+  }
+  .logo {
+    margin-top: 0;
+    margin-bottom: 5rem;
+    max-width: 10%;
+  }
+  input[type="number"] {
+    font-size: 2rem;
+  }
+  .buttons {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+  .left {
+    gap: 3rem;
+  }
+  .btn {
+    padding: 0.5rem;
+    font-size: 1.5rem;
+  }
+  .btn,
+  .custom {
+    width: 130px;
+  }
+  .right {
+    padding-block: 3rem;
+    width: 25vw;
+  }
+
+  .btn.reset {
+    margin-top: 6rem;
+  }
+  .results {
+    font-size: 3.5rem;
+    color: var(--clr-primary-StrongCyan);
+  }
 }

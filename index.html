@@ -20,13 +20,14 @@
       <img src="./images/logo.svg" class="logo" alt="logo" />
       <div class="wrapper grid">
         <div class="left grid">
-          <label class="bills">
+          <label class="bills" id="billLabel">
             Bill
-            <input type="number" name="bill" id="bill" placeholder="0.0" />
+            <img src="./images/icon-dollar.svg" class="sign" alt="dollar">
+            <input type="number" name="bill" id="bill" placeholder="0.0" min="1" />
           </label>
 
           <section class="tips">
-            <h1>Select Tip %</h1>
+            <h1 class="title">Select Tip %</h1>
             <div class="buttons grid" id="buttons">
               <input type="button" class="btn" name="tip" value="5%" />
               <input type="button" class="btn" name="tip" value="10%"  />
@@ -36,9 +37,10 @@
               <input type="text" class="custom" id="custom" placeholder="Custom" />
             </div>
           </section>
-          <label class="bills">
+          <label class="bills" id="numberLabel">
             Number of People
-            <input type="number" name="numberPeople" id="numberPeople" placeholder="0" />
+            <img src="./images/icon-person.svg" class="sign" alt="person">
+            <input type="number" name="numberPeople" id="numberPeople"  placeholder="0" / min="1">
           </label>
         </div>
 
@@ -51,16 +53,16 @@
             <h2>Total <span>/ person</span></h2>
             <span class="results" id="total">0.0</span>
           </div>
-          <button class="btn reset" id="reset">RESET</button>
+          <button class="btn reset" id="reset" disabled>RESET</button>
         </div>
       </div>
     </main>
 
-    <!--   
-  <div class="attribution">
+      
+  <footer class="attribution">
     Challenge by <a rel="noopener" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div> -->
+    Coded by <a href="https://github.com/AlfredoPegueroC" target="_blank">Alfredo Peguero</a>.
+  <footer/>
   <script src="./app.js"></script>
   </body>
 </html>

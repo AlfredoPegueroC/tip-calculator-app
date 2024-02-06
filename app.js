@@ -2,6 +2,9 @@ const tipBtn = document.getElementsByName("tip");
 const resetBtn = document.querySelector("#reset");
 
 const bills = document.querySelector("#bill");
+const billLabel = document.querySelector("#billLabel")
+
+
 const numberPeople = document.querySelector("#numberPeople");
 const customTip = document.querySelector("#custom");
 
@@ -15,6 +18,7 @@ function CalculateSlit(bill, numPeople, tip = 2) {
 
     tipResult.textContent = tip_amount.toFixed(2);
     total.textContent = (bill / numPeople + tip_amount).toFixed(2);
+    resetBtn.removeAttribute("disabled")
   }
   return;
 }
@@ -36,7 +40,18 @@ function reset() {
   bills.value = "";
   tipResult.textContent = "0.0"
   total.textContent = "0.0"
+  resetBtn.setAttribute("disabled", true)
 }
+function validationInput(input, label){
+  if(input.value <= 0){
+    input.classList.add("error")
+    label.classList.add("error")
+  }
+}
+
+
+
+// ADDEVENTLISTENER
 
 tipBtn.forEach((element) => {
   element.addEventListener("click", () => {
@@ -57,3 +72,6 @@ numberPeople.addEventListener("input", () =>CalculateSlit(bill.value, numberPeop
 );
 
 resetBtn.addEventListener("click", () => reset())
+
+// VALIDATION
+

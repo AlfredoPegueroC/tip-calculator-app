@@ -22,36 +22,36 @@
         <div class="left grid">
           <label class="bills">
             Bill
-            <input type="text" autocomplete="none" placeholder="0.0" />
+            <input type="number" name="bill" id="bill" placeholder="0.0" />
           </label>
 
           <section class="tips">
             <h1>Select Tip %</h1>
-            <div class="buttons grid">
-              <input type="submit" class="btn" value="5%" />
-              <input type="submit" class="btn" value="10%" />
-              <input type="submit" class="btn" value="15%" />
-              <input type="submit" class="btn" value="25%" />
-              <input type="submit" class="btn" value="50%" />
-              <input type="text" class="custom" placeholder="Custom" />
+            <div class="buttons grid" id="buttons">
+              <input type="button" class="btn" name="tip" value="5%" />
+              <input type="button" class="btn" name="tip" value="10%"  />
+              <input type="button" class="btn" name="tip" value="15%" />
+              <input type="button" class="btn" name="tip" value="25%" />
+              <input type="button" class="btn" name="tip" value="50%" />
+              <input type="text" class="custom" id="custom" placeholder="Custom" />
             </div>
           </section>
           <label class="bills">
             Number of People
-            <input type="text" autocomplete="none" placeholder="0" />
+            <input type="number" name="numberPeople" id="numberPeople" placeholder="0" />
           </label>
         </div>
 
         <div class="right grid">
           <div class="tips__amount">
             <h2>Tip Amount <span>/ person</span></h2>
-            <span class="results" >0.0</span>
+            <span class="results" id="result_tip" >0.0</span>
           </div>
           <div class="tips__amount">
             <h2>Total <span>/ person</span></h2>
-            <span class="results">0.0</span>
+            <span class="results" id="total">0.0</span>
           </div>
-          <button class="btn reset">Reset</button>
+          <button class="btn reset" id="reset">RESET</button>
         </div>
       </div>
     </main>
@@ -61,5 +61,6 @@
     Challenge by <a rel="noopener" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div> -->
+  <script src="./app.js"></script>
   </body>
 </html>
